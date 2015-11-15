@@ -82,8 +82,8 @@ img {
 <div id="imputing-missing-values" class="section level2">
 <h2>Imputing missing values</h2>
 <p>missing &lt;- is.na(data$steps)<br />table(missing)</p>
-<div id="all-of-the-missing-values-are-filled-in-with-mean-value-for-that-5-minute-interval." class="section level4">
-<h4>All of the missing values are filled in with mean value for that 5-minute interval.</h4>
+<div id="all-of-the-missing-values-are-filled-in-with-mean-value-for-that-5-minute-interval.-replace-each-missing-value-with-the-mean-value-of-its-5-minute-interval" class="section level4">
+<h4>All of the missing values are filled in with mean value for that 5-minute interval. Replace each missing value with the mean value of its 5-minute interval</h4>
 <p>fill.value &lt;- function(steps, interval) {<br /> filled &lt;- NA<br /> if (!is.na(steps))<br /> filled &lt;- c(steps)<br /> else<br /> filled &lt;- (averages[averages$interval==interval, “steps”])<br /> return(filled)<br />}<br />filled.data &lt;- data<br />filled.data<span class="math">\(steps &lt;- mapply(fill.value, filled.data\)</span>steps, filled.data$interval)</p>
 </div>
 <div id="now-using-the-filled-data-set-lets-make-a-histogram-of-the-total-number-of-steps-taken-each-day-and-calculate-the-mean-and-median-total-number-of-steps." class="section level4">
